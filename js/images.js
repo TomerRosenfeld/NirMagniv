@@ -10,8 +10,8 @@ var addr = "http://en.wikipedia.org/w/api.php?action=query&prop=pageimages&forma
 
 applyIMAGES();
 
-var events = [];
-function applyIMAGES (e) {
+var events;
+function applyIMAGES (e) {console.log(e);
     events = e;
     applyImages(0);
 }

@@ -20,10 +20,9 @@
     <script src="js/elevator.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body ng-app="one" ng-controller="oneCtrl" style="background-image: url('http://lorempixel.com/3840/2160/nature/')">
-<div style="width:40vw;" class="input-field col s6 center center-block" ng-show="!loading">
-    <input placeholder="Search" ng-model="search" style="width:38vw; padding-left: 2vw;color: black;background-color: whitesmoke" id="search" type="text" class="validate z-depth-5">
-    <!--<label for="search"><i class="material-icons">search</i></label>-->
+<body ng-app="one" ng-controller="oneCtrl">
+<div class="input-field col s6 search center center-block" ng-show="!loading">
+    <input placeholder="Search" ng-model="search" id="search" type="text" class="validate z-depth-5">
 </div>
 <img src="http://orig11.deviantart.net/2393/f/2014/348/c/9/such_spin__much_doge__wow_by_randomcookieh-d89v88t.gif"
      class="loading" ng-show="loading">
@@ -31,11 +30,11 @@
     <div class="col s12 m7">
         <div class="card z-depth-5">
             <div class="card-content">
-                <ul ng-repeat="article in articles" style="background-color: white" >
+                <ul ng-repeat="article in articles"  >
                     <li class="list-item valign-wrapper" ng-click="openDialog(article.title,article.url)">
                          <div class="title center-block " >{{article.title}}</div>
                     </li>
-                    <hr style="margin-left: 5vw;margin-right: 5vw">
+                    <hr>
                 </ul>
             </div>
         </div>
@@ -47,9 +46,9 @@
     <h3 id="city" ng-show="animated3">{{city}}</h3>
     <h3 id="day" ng-show="animated4">{{day}}</h3>
 </div>
-<div class="fixed-action-btn" style="bottom: 45px; right: 24px;" ng-show="!loading">
+<div class="fixed-action-btn fab" ng-show="!loading">
     <a class="btn-floating btn-large red">
-        <i class="large material-icons center-align"  style="font-size: 5vh" id="elevatorFuck">&uarr;</i>
+        <i class="large material-icons center-align" id="elevatorFuck">&uarr;</i>
     </a>
 </div>
 

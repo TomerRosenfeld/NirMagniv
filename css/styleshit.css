@@ -20,7 +20,7 @@ body {
 }
 
 .center {
-    width: 40%;
+    width: 40vw;
     height: 50%;
     display: block;
     margin-left: auto;
@@ -28,7 +28,7 @@ body {
 }
 
 .article-wrapper {
-    background-color: black;
+    background-color: white
 }
 
 .loading {
@@ -42,31 +42,58 @@ body {
     height: 40vh;
     z-index: 999;
 }
-.iframeSite{
+
+.iframeSite {
     display: inline-block;
     width: 50vw;
     height: 65vh;
 }
-.iframeWebsiteWrapper{
+
+.iframeWebsiteWrapper {
     width: 60vw;
 }
-.title{
+
+.title {
     color: #000;
     font-size: x-large;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    line-height: 30px;     /* fallback */
-    max-height: 60px;      /* fallback */
+    line-height: 30px; /* fallback */
+    max-height: 60px; /* fallback */
     -webkit-line-clamp: 2; /* number of lines to show */
     -webkit-box-orient: vertical;
     padding-left: 5vw;
     padding-right: 5vw;
-    cursor:pointer
+    cursor: pointer
 }
 
-.list-item{
+.list-item {
     padding-top: 5vh;
     padding-bottom: 5vh;
 }
 
+.search {
+    width: 40vw;
+}
+
+#search {
+    width: 38vw;
+    padding-left: 2vw;
+    color: black;
+    background-color: whitesmoke
+}
+
+hr {
+    margin-left: 5vw;
+    margin-right: 5vw
+}
+
+.fab {
+    bottom: 45px;
+    right: 24px;
+}
+
+#elevatorFuck {
+    font-size: 5vh
+}

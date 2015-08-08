@@ -45,7 +45,7 @@ app.controller('oneCtrl', function ($scope,$location) {
                     $scope.loading = false;
                     $scope.$digest();
                     $scope.articles = data.r;
-                    applyIMAGES();
+                    applyIMAGES($scope.articles);
                     $scope.changeWeatherVars()
                     $("#card").addClass("animated fadeInUpBig");
                     setTimeout(function () {

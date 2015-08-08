@@ -10,8 +10,9 @@ var addr = "http://en.wikipedia.org/w/api.php?action=query&prop=pageimages&forma
 
 applyIMAGES();
 
-
-function applyIMAGES () {
+var events = [];
+function applyIMAGES (e) {
+    events = e;
     applyImages(0);
 }
 
@@ -22,7 +23,7 @@ function applyImages(index) {
     if (index == events.length - 1)
         return;
 
-    var query = chooseWords(events[index].meaning);
+    var query = chooseWords(events[index].title);
 
     //console.log(query);
 

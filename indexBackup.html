@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="js/main.js"></script>
+    <link type="text/css" rel="stylesheet" href="bower_components/materialize/dist/css/materialize.css"  media="screen,projection"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="bower_components/materialize/dist/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="css/styleshit.css"/>
+    <script src="http://bigspaceship.github.io/shine.js/js/shine.min.js"></script>
+    <script src="js/jquery.tiltedpage-scroll.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+    <link rel="stylesheet" href="css/animate.css">
+    <script src="bower_components/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="bower_components/sweetalert/dist/sweetalert.css">
+    <script src="//code.onion.com/fartscroll.js"></script>
+    <script src="js/elevator.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body ng-app="one" ng-controller="oneCtrl" style="background-image: url('http://lorempixel.com/3840/2160/nature/')">
+<div style="width:40vw;" class="input-field col s6 center center-block" ng-show="!loading">
+    <input placeholder="Search" ng-model="search" style="width:38vw; padding-left: 2vw;color: black;background-color: whitesmoke" id="search" type="text" class="validate z-depth-5">
+    <!--<label for="search"><i class="material-icons">search</i></label>-->
+</div>
+<img src="http://orig11.deviantart.net/2393/f/2014/348/c/9/such_spin__much_doge__wow_by_randomcookieh-d89v88t.gif"
+     class="loading" ng-show="loading">
+<div id="card" class="center " ng-show="!loading">
+    <div class="col s12 m7">
+        <div class="card z-depth-5">
+            <div class="card-content">
+                <ul ng-repeat="article in articles" style="background-color: white" >
+                    <li class="list-item valign-wrapper" ng-click="openDialog(article.title,article.url)">
+                         <div class="title center-block " >{{article.title}}</div>
+                    </li>
+                    <hr style="margin-left: 5vw;margin-right: 5vw">
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="weather_div" class="left-align" ng-show="!loading">
+    <h3 id="temp" ng-show="animated1">{{temp}}&deg;C</h3>
+    <h3 id="condition" ng-show="animated2">{{condition}}</h3>
+    <h3 id="city" ng-show="animated3">{{city}}</h3>
+    <h3 id="day" ng-show="animated4">{{day}}</h3>
+</div>
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;" ng-show="!loading">
+    <a class="btn-floating btn-large red">
+        <i class="large material-icons center-align"  style="font-size: 5vh" id="elevatorFuck">&uarr;</i>
+    </a>
+</div>
+
+</body>
+</html>

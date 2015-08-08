@@ -3,21 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="scripts/main.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="style/styleshit.css"/>
+    <script src="http://bigspaceship.github.io/shine.js/js/shine.min.js"></script>
+    <script src="scripts/jquery.tiltedpage-scroll.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+    <script src="bower_components/ngFx/dist/ngFx.min.js"></script>
+    <link rel="stylesheet" href="style/animate.css">
+    <script src="bower_components/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="bower_components/sweetalert/dist/sweetalert.css">
 </head>
-<body>
-    <div id="weather_div">
-        <img id="icon" src="">
-        <h2 id="temp">
+<body ng-app="one" ng-controller="oneCtrl">
+<img src="http://orig11.deviantart.net/2393/f/2014/348/c/9/such_spin__much_doge__wow_by_randomcookieh-d89v88t.gif"
+     class="loading" ng-show="loading">
+<ul ng-show="!loading" class="center " ng-repeat="article in articles" style="background-color: white">
+    <li class="list-item" ng-click="openDialog(article.title,article.url)">
+        <h4 class="title">{{article.title}}</h4>
+        <img src="http://orig03.deviantart.net/aff8/f/2014/023/2/9/business_doge_by_alidoge-d73dmie.jpg">
+    </li>
+</ul>
 
-        </h2>
-        <h3 id="condition">
+<div id="weather_div" class="left-align" ng-show="!loading">
+    <h2 id="temp">{{temp}}&deg;C</h2>
 
-        </h3>
-        <h4 id="city">
-
-        </h4>
-    </div>
+    <h3 id="condition">{{condition}}</h3>
+    <h4 id="city">{{city}}</h4>
+</div>
 </body>
 </html>

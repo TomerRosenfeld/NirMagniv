@@ -4,13 +4,18 @@
 
 var app = angular.module('one', []);
 app.controller('oneCtrl', function ($scope,$location) {
+        // Change this to true if you are debugging with localhost OR to false if your working with remote server
+        var debug = false;
+
         var query = document.location.search.replace("?", "");
         if (query == undefined || query == "" || query == null) {
             query = "New York";
             window.location = "?"+query;
         }
-        var host = "188.226.168.96";
-        var port = 666;
+
+        var host = (debug ? "localhost" : "188.226.168.96");
+        var port = 3000;
+
         $scope.weatherCounter = 0;
         $scope.loading = true;
         $scope.animated1 = false;

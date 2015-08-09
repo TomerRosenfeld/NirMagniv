@@ -4,6 +4,7 @@
 var http = require('http');
 var weather = require('./weather');
 var news = require('./news');
+var port = process.env.PORT || 3000;
 
 http.createServer(function(req, res) {
     query = parseURL(req.url);
@@ -31,7 +32,9 @@ http.createServer(function(req, res) {
 
         //res.end(data);
     });
-}).listen(666);
+}).listen(port,function(){
+    console.log('Listening on ' + port);
+});
 
 console.log("Server running");
 

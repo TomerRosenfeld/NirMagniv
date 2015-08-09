@@ -6,9 +6,10 @@ var app = angular.module('one', []);
 app.controller('oneCtrl', function ($scope,$location) {
         var query = document.location.search.replace("?", "");
         if (query == undefined || query == "" || query == null) {
-            query = "New York"
+            query = "New York";
+            window.location = "?"+query;
         }
-        var host = "192.168.1.143";
+        var host = "188.226.168.96";
         var port = 666;
         $scope.weatherCounter = 0;
         $scope.loading = true;
@@ -45,8 +46,10 @@ app.controller('oneCtrl', function ($scope,$location) {
                     $scope.loading = false;
                     $scope.$digest();
                     $scope.articles = data.r;
-                    applyIMAGES(data.r);
-                    $scope.changeWeatherVars()
+                    $scope.changeWeatherVars();
+                    $("#search_wrapper").addClass("animated fadeInDownBig");
+                    $("#fab").addClass("animated rotateIn");
+                    $(".arrows").addClass("animated fadeInLeftBig");
                     $("#card").addClass("animated fadeInUpBig");
                     setTimeout(function () {
                         $("#temp").addClass("animated fadeInRightBig");
@@ -86,7 +89,7 @@ app.controller('oneCtrl', function ($scope,$location) {
         $scope.shuffleColor = function () {
             var color = $scope.weather.bg;
             if ($scope.darker) {
-                $("body").css("background-color", 'rgba(' + color.r + ',' + color.g + ',' + color.b + ',' + 1.1 + ')');
+                $("wrapper").css("background-color", 'rgba(' + color.r + ',' + color.g + ',' + color.b + ',' + 1.0 + ')');
             }
             else {
                 $("body").css("background-color", 'rgba(' + color.r + ',' + color.g + ',' + color.b + ',' + 0.8 + ')');

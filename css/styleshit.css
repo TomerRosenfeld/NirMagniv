@@ -1,12 +1,12 @@
 #weather_div {
     position: fixed;
     top: 0;
-    right: 4em;
+    right: 4vw;
+    max-width: 15vw;
 
 }
-
-#temp {
-
+h3{
+    font-size: 2vw;
 }
 
 body {
@@ -55,7 +55,7 @@ body {
 
 .title {
     color: #000;
-    font-size: x-large;
+    font-size: 2vh;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -76,10 +76,12 @@ body {
 .search {
     width: 40vw;
 }
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    darkgrey;
+}
 
 #search {
-    width: 38vw;
-    padding-left: 2vw;
+    width: 40vw;
     color: black;
     background-color: whitesmoke
 }
@@ -90,10 +92,19 @@ hr {
 }
 
 .fab {
-    bottom: 45px;
-    right: 24px;
+    bottom: 3vh;
+    right: 2vw;
 }
 
 #elevatorFuck {
-    font-size: 5vh
+    font-size: 3vh
+}
+.arrows{
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    height: 13vh;
+    width: 10vw;
 }

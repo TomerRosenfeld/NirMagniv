@@ -31,13 +31,15 @@
 
 <div id="card" class="center " ng-show="!loading">
     <div class="col s12 m7">
-        <div class="card z-depth-5">
+        <div class="card">
             <div class="card-content">
                 <ul ng-repeat="article in articles">
                     <li class="list-item valign-wrapper" ng-click="openDialog(article.title,article.url)">
                         <div class="title center-block ">{{article.title}}</div>
                     </li>
-                    <hr>
+                    <li>
+                        <hr>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -52,10 +54,10 @@
 
     <h3 id="day" ng-show="animated4">{{day}}</h3>
 </div>
-<img src="images/arrows.png" class="arrows" ng-show="!loading">
+<img src="images/arrows.png" class="arrows" ng-show="!loading" style="opacity: 0.3">
 
-<div class="fixed-action-btn fab" id="fab" ng-show="!loading" >
-    <a class="btn-floating btn-large red valign-wrapper" style=" width: 3vw;height:3vw; ">
+<div class="fixed-action-btn fab " id="fab" ng-show="!loading" >
+    <a class="btn-floating btn-large red valign-wrapper z-depth-3" style=" width: 3vw;height:3vw; ">
         <i class="large material-icons center-align valign" id="elevatorFuck">&uarr;</i>
     </a>
 </div>

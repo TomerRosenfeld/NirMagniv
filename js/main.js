@@ -38,11 +38,11 @@ app.controller('oneCtrl', function ($scope,$location) {
             timeout: 20000,
             jsonpCallback: "callback",
             success: function (data) {
-                audioElement.pause();
                 $scope.data = data;
                 $scope.weather = data.w[$scope.weatherCounter];
                 $scope.shuffleColor($scope.weather.bg)
                 $(".loading").fadeOut(1000, function () {
+                    audioElement.pause();
                     $scope.loading = false;
                     $scope.$digest();
                     $scope.articles = data.r;
